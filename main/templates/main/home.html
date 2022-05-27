@@ -1,0 +1,90 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en" >
+<head>
+    <meta charset="UTF-8">
+	<title>Price Comparision</title>
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+	<link rel="stylesheet" type="text/css" href="{% static 'main/css/home.css' %}" >
+	<script src="https://use.fontawesome.com/02cfcb3bc4.js"></script>
+    <link rel="icon"href="{% static 'favicon.ico' %}">
+
+</head>
+
+<body>
+    <nav class="navbar navbar-default navbar-fixed-top abc">
+        <div class="container">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-nav-demo" aria-expanded="false">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                </button>
+                <a href="#" class="navbar-brand">SmartBuy</a>
+            </div>
+
+            <div class="collapse navbar-collapse" id="bs-nav-demo">
+                <form class="navbar-form navbar-left" method="POST">
+                    <div class="form-group">
+						{% csrf_token %}
+                        {% for fm in form %}
+                        {{ fm }}
+                        {% endfor %}
+                        <button type="submit" style="display: none;">search</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </nav>
+
+    <div class="bkl">
+        <div class="big">
+            <a href="{% url 'list' 'mobiles' %}">
+                <div class="box1">
+                    <img src="{% static 'main/images/card-1_132698011.png'%}">
+                    <div class="bu">
+                        <button type="button">Mobile Phones</button>
+                    </div>
+                </div>
+            </a>
+            <a href="{% url 'list' 'laptops' %}">
+                <div class="box2">
+                    <img src="{% static 'main/images/card-2_628627137.png'%}">
+                    <div class="bu">
+                        <button type="button" herf="#">Laptops</button>
+                    </div>
+                </div>
+            </a>
+            <a href="{% url 'list' 'ac' %}">
+                <div class="box3">
+                    <img src="{% static 'main/images/card-3_245943451.png'%}">
+                    <div class="bu">
+                        <button type="button" herf="#">Air Conditioners</button>
+                    </div>
+                </div>
+            </a>
+            <a href="{% url 'list' 'tv' %}">
+                <div class="box4">
+                    <img src="{% static 'main/images/card-4_906173506.png'%}">
+                    <div class="bu">
+                        <button type="button" herf="#">Televisions</button>
+                    </div>
+                </div>
+            </a>
+            <a href="{% url 'list' 'refrigerators' %}">
+                <div class="box5">
+                    <img src="{% static 'main/images/card-5_911816166.png'%}">
+                    <div class="bu">
+                        <button type="button" herf="#">Refrigerator</button>
+                    </div>
+                </div>
+            </a>
+        </div>
+    </div>
+
+    <script type="text/javascript" src="https://code.jquery.com/jquery-2.1.4.min.js"></script>
+    <script type="text/javascript" src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+</body>
+
+</html>
